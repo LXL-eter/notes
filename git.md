@@ -5,14 +5,15 @@
   &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj;&zwj; &zwj; `git config --global user.email "邮箱"`
 ~~~
 仓库根目录下创.gitignore
-#注释 *.c a/**/b /匹配根目录,否则所有目录 !取消忽略
+#注释 *.c a/**/b /开头匹配根目录,否则所有目录 !取消忽略
 git check-ignore -v 文件  查看是否忽略
 ~~~
++ git ls-files 列出跟踪的文件 -t已跟踪文件 -c已暂存文件 -o未跟踪文件
 + `git status` &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; 查看工作区、暂存区状态
 + `git diff` &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; 工作区和暂存区差异 
  `git diff 分支`&zwj; &zwj; &zwj; 工作区和分支差异
  `git diff 分支1 分支2` 两分支差异
- + `git add 文件` &zwj; &zwj; &zwj; &zwj; 只暂存修改过的文件
+ + `git add 文件` &zwj; &zwj; &zwj; &zwj; 只暂存修改过的文件,可*.c
    `git add .` &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; 暂存当前目录所有修改过的文件
 + `git rm --cached 文件` 从暂存区中去除
 + `git rm 名1` &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; 删除本地和仓库的文件
@@ -31,8 +32,12 @@ footer:Fixes #id和Closes #id表示解决
    `git tag` &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; 查看标签
 + 回溯:`git checkout id/main`
 #### HEAD MAIN
-+ `git branch 标签名 (id)`给分支标签名防丢失,默认HEAD
-  `git branch` &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; 查看分支
++   `git branch` &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; 查看分支
+`git branch 标签名 (id)`给分支标签名防丢失,默认HEAD
+ `git branch 名` &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; 创分支
+`git branch -d 分支名` 删除已合并分支
+`git branch -D 分支名` 强制删除分支
+
 + `git checkout 分支` &zwj; &zwj; &zwj; (-b创建)切换分支(修改后还要add、commit)
 + `git merge 分支`合并到当前分支,有冲突,则vscode里选择,add、commit,倾向于多
 &zwj; 
@@ -41,27 +46,31 @@ footer:Fixes #id和Closes #id表示解决
 + `git clone 仓库网址` 创一个目录,账号全局设置
  &zwj; 再add、commit
 + `git push`(不要开外网？)
++ `git reset HEAD~数·`回退之前的版本
+`git reset --soft`保留暂存区和工作区的所有内容，只回溯commit内容
+`git reset --hard`删除暂存区和工作区的所有内容，回溯commit
+`git reset --mixed`删除暂存区内容，保留工作区内容，回溯commit
 ~~~
 用令牌登录
-settings-developer settings-personal access tokens-Tokens(classic)-Generate new token(classic)作为密码
+settings->developer settings->personal access tokens->Tokens(classic)->Generate new token(classic)作为密码
 ~~~ 
 ~~~
 签署commit
 gpg --full-generate-key 均默认 名设为github名
 sec/与日期间的数字串为密钥
 gpg --armor --export 密钥->公钥
-SSH and GPG keys-new GPG key
+SSH and GPG keys->new GPG key
 git commit -S -m "" (输入私钥密码)
 ~~~
 可invite collaborators,使之有权限在本地push
 # PR
 ~~~
 fork
-git remote add origin 网址 -v查看
-git push -u origin main
+git remote add 仓库别名 网址 -v查看
+git push -u 远程仓库名 main
 contribute里open pull request
-本源仓库pull requests里Merge pull request(可能要Resolve con conflicts)
-fork仓库可sync fork里update,再在本地git pull
-pull request后再push会被改变
+本源仓库pull requests里Merge pull request(可能要Resolve conflicts)
+fork仓库可sync fork里update 在本地git pull 远程仓库名 远程分支名:本地分支名
+pull request后再push会改变pull request内容
 本源仓库可在pull request里Review changes要求fork者更改,可再approve  可直接修改,再commit,会改fork
 ~~~
