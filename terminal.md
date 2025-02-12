@@ -21,7 +21,7 @@
 + clear&zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; (清屏)
 + find &zwj; 路径 &zwj; -name &zwj; '*.扩展名'
 + which 命令 &zwj; (查位置)
-+ echo ... &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; (输出内容)
++ echo ... &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; (输出内容) 可echo $[算式]
 + mv 名1 名2 &zwj; (内容/整体移到最后一个或改名)
 + gcc 原名 -g -o 可执行文件名
 + whoami&zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj;  (获取当前用户名)
