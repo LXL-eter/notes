@@ -29,6 +29,7 @@
 + grep 内容 文件名 &zwj; &zwj; (搜索内容)
 + ps (显示进程信息)
 + diff 文件名1 文件名2 (比较)
++ source 立即加载
 + curl &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; (发送HTTP请求)
 + env &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj; (查看所有环境变量)
 ~~~
