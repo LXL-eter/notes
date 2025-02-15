@@ -9,6 +9,7 @@
 + rmdir 目录名 &zwj; (删目录)
 + touch 文件名 &zwj; (可创多个文件)
 + rm &zwj; &zwj; &zwj; &zwj; &zwj; 文件名 &zwj; &zwj;(删文件) &zwj; -r递归删 -f强制
+sudo rm which找到的路径
 + open &zwj; 名&zwj; &zwj; (打开)
 + chflags hidden 名 &zwj; &zwj; &zwj; &zwj; (隐藏)
 + chflags nohidden 名&zwj; (不隐藏)
