@@ -48,6 +48,7 @@ DDOS:分布式拒绝服务攻击,多攻击一
 curl、wget更方便 -X指定请求方法 -d指定请求体
 ### Web
 ##### HTML(超文本标记语言)
+command+shift+c打开网页HTML
 ```HTML
 <!DOCTYPE html>
 <html><head><title>标题</title></head>
